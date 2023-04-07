@@ -7,24 +7,24 @@ function Initialize()
     if orientation == 'DOWN' then
         SKIN:Bang("!SetVariable", "BarX", "0")
         SKIN:Bang("!SetVariable", "BarY", "0")
-        SKIN:Bang("!SetVariable", "BarW", "(#BarWidth#)")
-        SKIN:Bang("!SetVariable", "BarH", "(#BarWidth# + #BarHeight# * [MeasureBand{%%}])")
+        SKIN:Bang("!SetVariable", "BarW", "#BarWidth#")
+        SKIN:Bang("!SetVariable", "BarH", "(#BarWidth# + #BarHeight# * [{MeasureType}{%%}])")
     elseif orientation == 'LEFT' then
         SKIN:Bang("!SetVariable", "MeterX", "0r")
         SKIN:Bang("!SetVariable", "MeterY", "#BarPadding#R")
 
         SKIN:Bang("!SetVariable", "BarX", "(#BarWidth# + #BarHeight#)")
         SKIN:Bang("!SetVariable", "BarY", "0")
-        SKIN:Bang("!SetVariable", "BarW", "(-#BarWidth# - #BarHeight# * [MeasureBand{%%}])")
-        SKIN:Bang("!SetVariable", "BarH", "(#BarWidth#)")
+        SKIN:Bang("!SetVariable", "BarW", "(-#BarWidth# - #BarHeight# * [{MeasureType}{%%}])")
+        SKIN:Bang("!SetVariable", "BarH", "#BarWidth#")
     elseif orientation == 'RIGHT' then
         SKIN:Bang("!SetVariable", "MeterX", "0r")
         SKIN:Bang("!SetVariable", "MeterY", "#BarPadding#R")
 
         SKIN:Bang("!SetVariable", "BarX", "0")
         SKIN:Bang("!SetVariable", "BarY", "0")
-        SKIN:Bang("!SetVariable", "BarW", "(#BarWidth# + #BarHeight# * [MeasureBand{%%}])")
-        SKIN:Bang("!SetVariable", "BarH", "(#BarWidth#)")
+        SKIN:Bang("!SetVariable", "BarW", "(#BarWidth# + #BarHeight# * [{MeasureType}{%%}])")
+        SKIN:Bang("!SetVariable", "BarH", "#BarWidth#")
     else
         -- default case (UP) nothing to change
     end
